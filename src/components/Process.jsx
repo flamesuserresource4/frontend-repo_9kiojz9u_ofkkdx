@@ -32,11 +32,11 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative w-full bg-neutral-950 py-20 text-white">
+    <section id="process" className="relative w-full bg-neutral-50 py-20 text-neutral-900">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-semibold sm:text-4xl">Legacy discipline, new-age execution.</h2>
-          <p className="mt-3 text-white/70">Our workflow brings consultancy-grade clarity with studio-level craft.</p>
+          <p className="mt-3 text-neutral-600">Our workflow brings consultancy-grade clarity with studio-level craft.</p>
         </div>
 
         <ol className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -47,21 +47,21 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+              className="rounded-2xl border border-neutral-200 bg-white p-6"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 ring-1 ring-neutral-200">
                   <step.icon size={18} />
                 </div>
-                <div className="text-sm font-semibold uppercase tracking-wide text-white/60">Step {idx + 1}</div>
+                <div className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Step {idx + 1}</div>
               </div>
               <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm text-white/80">{step.desc}</p>
+              <p className="mt-2 text-sm text-neutral-600">{step.desc}</p>
             </motion.li>
           ))}
         </ol>
 
-        <div className="mt-12 rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 text-sm text-white/80">
+        <div className="mt-12 rounded-2xl border border-neutral-200 bg-gradient-to-br from-neutral-100 via-white to-white p-6 text-sm text-neutral-700">
           <p>
             Think like engineers, create like artists, deliver like partners. Expect Notion dashboards,
             brand books, and clean code documentation as part of every engagement.

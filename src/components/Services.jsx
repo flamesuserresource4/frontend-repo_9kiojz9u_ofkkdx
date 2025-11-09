@@ -51,18 +51,18 @@ function Card({ title, icon: Icon, items, delay = 0 }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay }}
-      className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 text-white shadow-xl backdrop-blur transition hover:bg-white/10"
+      className="group relative rounded-2xl border border-neutral-200 bg-white p-6 text-neutral-900 shadow-sm transition hover:shadow-md"
     >
       <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
+        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-neutral-100 ring-1 ring-neutral-200">
           <Icon size={18} />
         </div>
         <h3 className="text-lg font-semibold">{title}</h3>
       </div>
-      <ul className="mt-4 space-y-2 text-sm text-white/80">
+      <ul className="mt-4 space-y-2 text-sm text-neutral-600">
         {items.map((item) => (
           <li key={item} className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-white/60"></span>
+            <span className="h-1.5 w-1.5 rounded-full bg-neutral-400"></span>
             <span>{item}</span>
           </li>
         ))}
@@ -73,11 +73,11 @@ function Card({ title, icon: Icon, items, delay = 0 }) {
 
 export default function Services() {
   return (
-    <section id="services" className="relative w-full bg-black py-20 text-white">
+    <section id="services" className="relative w-full bg-white py-20 text-neutral-900">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-semibold sm:text-4xl">End-to-end capability. One partner.</h2>
-          <p className="mt-3 text-white/70">
+          <p className="mt-3 text-neutral-600">
             We design, engineer, and grow digital products with an integrated team across development,
             design, marketing, and AI systems.
           </p>

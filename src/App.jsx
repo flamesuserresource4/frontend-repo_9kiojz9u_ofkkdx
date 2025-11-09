@@ -1,24 +1,23 @@
 import React from 'react';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Showcase from './components/Showcase';
 import Process from './components/Process';
 import CTA from './components/CTA';
 
 function Footer() {
   return (
-    <footer className="w-full bg-neutral-950 py-10 text-white">
+    <footer className="w-full bg-white py-10 text-neutral-900">
       <div className="mx-auto max-w-7xl px-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white text-black">
+          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-900 text-white">
             <span className="text-lg font-black">K</span>
           </div>
           <div>
             <div className="text-sm font-semibold">Kivee</div>
-            <div className="text-xs text-white/60">Experienced. Innovative. Elevated.</div>
+            <div className="text-xs text-neutral-500">Experienced. Innovative. Elevated.</div>
           </div>
         </div>
-        <div className="text-xs text-white/60">© {new Date().getFullYear()} Kivee. All rights reserved.</div>
+        <div className="text-xs text-neutral-500">© {new Date().getFullYear()} Kivee. All rights reserved.</div>
       </div>
     </footer>
   );
@@ -26,10 +25,9 @@ function Footer() {
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full bg-black font-['Inter','Geist','Manrope',system-ui,sans-serif]">
+    <div className="min-h-screen w-full bg-white text-neutral-900 font-['Inter','Geist','Manrope',system-ui,sans-serif]">
       <Hero />
       <Services />
-      <Showcase />
       <Process />
       <CTA />
       <Footer />
