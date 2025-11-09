@@ -9,8 +9,10 @@ function Footer() {
     <footer className="w-full bg-white py-10 text-neutral-900">
       <div className="mx-auto max-w-7xl px-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-900 text-white">
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-900 text-white">
             <span className="text-lg font-black">K</span>
+            {/* subtle brand ring */}
+            <span className="pointer-events-none absolute inset-0 rounded-xl ring-2 ring-[rgba(5,163,222,0.35)]"></span>
           </div>
           <div>
             <div className="text-sm font-semibold">Kivee</div>

@@ -6,9 +6,14 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden bg-white text-neutral-900">
-      {/* Background accents */}
+      {/* Brand gradients using #80BF38 and #05A3DE */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-x-0 top-[-10%] mx-auto h-[60vh] max-w-4xl rounded-full bg-gradient-to-br from-purple-300/30 via-blue-300/20 to-orange-200/30 blur-3xl" />
+        <div className="absolute -top-24 left-1/2 h-[60vh] w-[60vw] -translate-x-1/2 rounded-full blur-3xl"
+             style={{
+               background:
+                 'radial-gradient(40% 40% at 50% 50%, rgba(128,191,56,0.18) 0%, rgba(128,191,56,0.0) 70%), radial-gradient(40% 40% at 60% 40%, rgba(5,163,222,0.16) 0%, rgba(5,163,222,0.0) 75%)'
+             }}
+        />
       </div>
 
       <div className="relative z-10 mx-auto grid min-h-screen max-w-7xl grid-cols-1 items-center gap-10 px-6 py-24 md:grid-cols-2">
@@ -30,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl"
           >
-            Kivee — experienced, innovative, and elevated.
+            Kivee — engineering brands with clarity, speed, and soul.
           </motion.h1>
 
           <motion.p
@@ -39,8 +44,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-5 max-w-2xl text-base text-neutral-600 sm:text-lg"
           >
-            A decade-strong, new-age powerhouse that fuses legacy craftsmanship with modern digital innovation. 
-            We architect end-to-end systems across design, code, growth, and AI.
+            We craft premium web experiences, brand systems, and AI-powered growth engines. Built to feel modern today and remain dependable tomorrow.
           </motion.p>
 
           <motion.div
@@ -51,7 +55,7 @@ export default function Hero() {
           >
             <a
               href="#services"
-              className="group inline-flex items-center gap-2 rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white transition hover:bg-neutral-800"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#05A3DE] px-6 py-3 text-sm font-medium text-white transition hover:brightness-95"
             >
               Explore services
               <ArrowRight className="transition group-hover:translate-x-0.5" size={16} />
@@ -63,6 +67,13 @@ export default function Hero() {
               How we work
             </a>
           </motion.div>
+
+          {/* Color bullets */}
+          <div className="mt-6 flex items-center gap-3 text-xs text-neutral-500">
+            <span className="inline-flex h-2.5 w-2.5 rounded-full" style={{ background: '#05A3DE' }} />
+            <span className="inline-flex h-2.5 w-2.5 rounded-full" style={{ background: '#80BF38' }} />
+            <span>Precision + energy in every delivery</span>
+          </div>
         </div>
 
         {/* Right 3D Object */}
@@ -72,13 +83,19 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
           className="relative h-[60vh] w-full md:h-[70vh]"
         >
-          <div className="absolute inset-0 rounded-3xl border border-neutral-200 bg-white">
+          <div className="absolute inset-0 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-[0_10px_30px_rgba(5,163,222,0.08)]">
             <Spline
               scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
             />
-            {/* Soft gradient overlay to match brand aura without blocking interaction */}
-            <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.10),transparent_60%),radial-gradient(ellipse_at_center,rgba(59,130,246,0.08),transparent_70%),radial-gradient(ellipse_at_center,rgba(251,146,60,0.08),transparent_80%)]" />
+            {/* Gradient overlay to blend brand colors without blocking interaction */}
+            <div
+              className="pointer-events-none absolute inset-0 rounded-3xl"
+              style={{
+                background:
+                  'radial-gradient(60% 60% at 30% 30%, rgba(5,163,222,0.10) 0%, rgba(5,163,222,0) 60%), radial-gradient(60% 60% at 70% 70%, rgba(128,191,56,0.12) 0%, rgba(128,191,56,0) 65%)'
+              }}
+            />
           </div>
         </motion.div>
       </div>
@@ -87,15 +104,16 @@ export default function Hero() {
       <div className="pointer-events-none absolute left-0 right-0 top-0 z-20">
         <div className="pointer-events-auto mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-900 text-white">
+            <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-neutral-900 text-white">
               <span className="text-lg font-black">K</span>
+              <span className="pointer-events-none absolute inset-0 rounded-xl ring-2 ring-[rgba(128,191,56,0.35)]"></span>
             </div>
             <span className="text-lg font-semibold tracking-wide">Kivee</span>
           </div>
           <div className="hidden items-center gap-6 md:flex">
             <a href="#services" className="text-sm text-neutral-600 transition hover:text-neutral-900">Services</a>
             <a href="#process" className="text-sm text-neutral-600 transition hover:text-neutral-900">Process</a>
-            <a href="#contact" className="rounded-full bg-neutral-900 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-800">Let’s talk</a>
+            <a href="#contact" className="rounded-full bg-[#80BF38] px-4 py-2 text-sm font-medium text-neutral-900 transition hover:brightness-95">Let’s talk</a>
           </div>
         </div>
       </div>

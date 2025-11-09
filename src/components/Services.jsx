@@ -6,6 +6,7 @@ const categories = [
   {
     title: 'Development',
     icon: Code,
+    accent: '#05A3DE',
     items: [
       'Websites & Webapps',
       'Mobile Apps',
@@ -17,6 +18,7 @@ const categories = [
   {
     title: 'Design',
     icon: Palette,
+    accent: '#80BF38',
     items: [
       'UI/UX & Product',
       'Branding & Logos',
@@ -27,6 +29,7 @@ const categories = [
   {
     title: 'Marketing',
     icon: Rocket,
+    accent: '#05A3DE',
     items: [
       'Social Media Marketing',
       'Content & Copywriting',
@@ -36,6 +39,7 @@ const categories = [
   {
     title: 'AI Systems',
     icon: Brain,
+    accent: '#80BF38',
     items: [
       'AI Agents & Workflows',
       'Automation Pipelines',
@@ -44,7 +48,7 @@ const categories = [
   },
 ];
 
-function Card({ title, icon: Icon, items, delay = 0 }) {
+function Card({ title, icon: Icon, items, accent, delay = 0 }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -62,11 +66,12 @@ function Card({ title, icon: Icon, items, delay = 0 }) {
       <ul className="mt-4 space-y-2 text-sm text-neutral-600">
         {items.map((item) => (
           <li key={item} className="flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-neutral-400"></span>
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }}></span>
             <span>{item}</span>
           </li>
         ))}
       </ul>
+      <span className="pointer-events-none absolute inset-x-6 bottom-0 block h-1 rounded-full" style={{ background: accent, opacity: 0.25 }} />
     </motion.div>
   );
 }
@@ -85,7 +90,7 @@ export default function Services() {
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((cat, i) => (
-            <Card key={cat.title} title={cat.title} icon={cat.icon} items={cat.items} delay={i * 0.05} />
+            <Card key={cat.title} title={cat.title} icon={cat.icon} items={cat.items} accent={cat.accent} delay={i * 0.05} />
           ))}
         </div>
       </div>
