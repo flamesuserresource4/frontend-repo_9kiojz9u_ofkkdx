@@ -8,11 +8,12 @@ export default function Hero() {
     <section className="relative min-h-screen w-full overflow-hidden bg-white text-neutral-900">
       {/* Brand gradients using #80BF38 and #05A3DE */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 left-1/2 h-[60vh] w-[60vw] -translate-x-1/2 rounded-full blur-3xl"
-             style={{
-               background:
-                 'radial-gradient(40% 40% at 50% 50%, rgba(128,191,56,0.18) 0%, rgba(128,191,56,0.0) 70%), radial-gradient(40% 40% at 60% 40%, rgba(5,163,222,0.16) 0%, rgba(5,163,222,0.0) 75%)'
-             }}
+        <div
+          className="absolute -top-24 left-1/2 h-[60vh] w-[60vw] -translate-x-1/2 rounded-full blur-3xl"
+          style={{
+            background:
+              'radial-gradient(40% 40% at 50% 50%, rgba(128,191,56,0.18) 0%, rgba(128,191,56,0.0) 70%), radial-gradient(40% 40% at 60% 40%, rgba(5,163,222,0.16) 0%, rgba(5,163,222,0.0) 75%)',
+          }}
         />
       </div>
 
@@ -24,9 +25,9 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600 shadow-sm"
-         >
+          >
             <Rocket size={14} />
-            <span>Legacy built. Future ready.</span>
+            <span>Designing clarity for ambitious brands</span>
           </motion.div>
 
           <motion.h1
@@ -35,7 +36,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl md:text-6xl"
           >
-            Kivee — engineering brands with clarity, speed, and soul.
+            Kivee — precision, momentum, and a finance‑grade finish.
           </motion.h1>
 
           <motion.p
@@ -44,7 +45,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-5 max-w-2xl text-base text-neutral-600 sm:text-lg"
           >
-            We craft premium web experiences, brand systems, and AI-powered growth engines. Built to feel modern today and remain dependable tomorrow.
+            We merge product thinking with brand systems. The result: elegant sites, durable design languages, and motion that feels inevitable.
           </motion.p>
 
           <motion.div
@@ -76,24 +77,25 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right 3D Object */}
+        {/* Right 3D Animation (updated) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.15 }}
           className="relative h-[60vh] w-full md:h-[70vh]"
         >
-          <div className="absolute inset-0 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-[0_10px_30px_rgba(5,163,222,0.08)]">
+          <div className="absolute inset-0 overflow-hidden rounded-3xl border border-neutral-200 shadow-[0_10px_30px_rgba(5,163,222,0.08)]">
             <Spline
-              scene="https://prod.spline.design/4cHQr84zOGAHOehh/scene.splinecode"
+              scene="https://prod.spline.design/G0i6ZIv4Vd1oW14L/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
             />
-            {/* Gradient overlay to blend brand colors without blocking interaction */}
+            {/* Gradient overlay to tie the animation to brand colors without blocking interaction */}
             <div
               className="pointer-events-none absolute inset-0 rounded-3xl"
               style={{
                 background:
-                  'radial-gradient(60% 60% at 30% 30%, rgba(5,163,222,0.10) 0%, rgba(5,163,222,0) 60%), radial-gradient(60% 60% at 70% 70%, rgba(128,191,56,0.12) 0%, rgba(128,191,56,0) 65%)'
+                  'radial-gradient(60% 60% at 30% 30%, rgba(5,163,222,0.10) 0%, rgba(5,163,222,0) 60%), radial-gradient(60% 60% at 70% 70%, rgba(128,191,56,0.12) 0%, rgba(128,191,56,0) 65%)',
+                mixBlendMode: 'screen',
               }}
             />
           </div>
