@@ -1,14 +1,29 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function CTA() {
   return (
     <section id="contact" className="relative w-full bg-black py-20 text-white">
       <div className="mx-auto max-w-5xl px-6 text-center">
-        <h2 className="text-3xl font-semibold sm:text-4xl">Ready to make your brand future-ready?</h2>
-        <p className="mt-3 text-white/70">
+        <motion.h2
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl font-semibold sm:text-4xl"
+        >
+          Ready to make your brand future-ready?
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="mt-3 text-white/70"
+        >
           Tell us about your goals. We’ll craft a clear plan across strategy, design, development, and AI —
           then deliver it with precision.
-        </p>
+        </motion.p>
         <div className="mx-auto mt-8 max-w-xl rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
           <form
             className="grid grid-cols-1 gap-3 sm:grid-cols-3"
@@ -17,7 +32,7 @@ export default function CTA() {
               const form = e.currentTarget;
               const data = new FormData(form);
               const payload = Object.fromEntries(data.entries());
-              alert(`Thanks, ${payload.name || 'friend'} — we\'ll reach out at ${payload.email || 'your email'}!`);
+              alert(`Thanks, ${payload.name || 'friend'} — we\\'ll reach out at ${payload.email || 'your email'}!`);
               form.reset();
             }}
           >

@@ -1,8 +1,8 @@
 import React from 'react';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import Showcase from './components/Showcase';
 import Process from './components/Process';
-import Identity from './components/Identity';
 import CTA from './components/CTA';
 
 function Footer() {
@@ -29,8 +29,8 @@ export default function App() {
     <div className="min-h-screen w-full bg-black font-['Inter','Geist','Manrope',system-ui,sans-serif]">
       <Hero />
       <Services />
+      <Showcase />
       <Process />
-      <Identity />
       <CTA />
       <Footer />
     </div>

@@ -1,29 +1,27 @@
 import React from 'react';
-import { Code, PenTool, Rocket, Brain, MousePointerClick, Palette, Smartphone, ShoppingCart, Video, Image, Layers, SquareStack, GaugeCircle } from 'lucide-react';
+import { Code, Palette, Rocket, Brain } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const categories = [
   {
     title: 'Development',
     icon: Code,
     items: [
-      'Website Development & Design',
-      'Webapp / Software Development',
+      'Websites & Webapps',
+      'Mobile Apps',
+      'Ecommerce',
+      'Landing Pages',
       'Page Speed & Performance',
-      'Landing Page Development',
-      'Ecommerce Development',
-      'Mobile App Development',
     ],
   },
   {
     title: 'Design',
     icon: Palette,
     items: [
-      'UI/UX & Product Design',
-      'Graphic Design',
-      'Packaging Design',
+      'UI/UX & Product',
       'Branding & Logos',
-      'Model Creation (2D/3D)',
-      'Animation',
+      'Graphic & Packaging',
+      '2D/3D Models & Animation',
     ],
   },
   {
@@ -33,7 +31,6 @@ const categories = [
       'Social Media Marketing',
       'Content & Copywriting',
       'Conversion Optimization',
-      'SEO-Friendly Foundations',
     ],
   },
   {
@@ -42,15 +39,20 @@ const categories = [
     items: [
       'AI Agents & Workflows',
       'Automation Pipelines',
-      'Recommendation Systems',
       'AI-Assisted Analytics',
     ],
   },
 ];
 
-function Card({ title, icon: Icon, items }) {
+function Card({ title, icon: Icon, items, delay = 0 }) {
   return (
-    <div className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 text-white shadow-xl backdrop-blur transition hover:bg-white/10">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6, delay }}
+      className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 text-white shadow-xl backdrop-blur transition hover:bg-white/10"
+    >
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
           <Icon size={18} />
@@ -65,13 +67,13 @@ function Card({ title, icon: Icon, items }) {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }
 
 export default function Services() {
   return (
-    <section id="services" className="relative w-full bg-neutral-950 py-20 text-white">
+    <section id="services" className="relative w-full bg-black py-20 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-semibold sm:text-4xl">End-to-end capability. One partner.</h2>
@@ -82,16 +84,9 @@ export default function Services() {
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {categories.map((cat) => (
-            <Card key={cat.title} title={cat.title} icon={cat.icon} items={cat.items} />
+          {categories.map((cat, i) => (
+            <Card key={cat.title} title={cat.title} icon={cat.icon} items={cat.items} delay={i * 0.05} />
           ))}
-        </div>
-
-        <div className="mt-12 rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-6 text-sm text-white/80">
-          <p>
-            Technology-agnostic, problem-specific. We recommend what fits — whether that’s a performant
-            React stack, Shopify, or custom AI workflows — and we document everything with clarity.
-          </p>
         </div>
       </div>
     </section>

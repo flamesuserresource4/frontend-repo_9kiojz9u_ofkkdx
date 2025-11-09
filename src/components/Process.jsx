@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, PenTool, Wrench, LineChart, Handshake } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const steps = [
   {
@@ -15,7 +16,7 @@ const steps = [
   {
     title: 'Process with creative freedom',
     icon: PenTool,
-    desc: 'Strategy → design → development → optimization → support. Structure with room to explore.',
+    desc: 'Strategy → design → development → optimization → support. Room to explore, built to ship.',
   },
   {
     title: 'Technology-agnostic, problem-specific',
@@ -31,18 +32,23 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative w-full bg-black py-20 text-white">
+    <section id="process" className="relative w-full bg-neutral-950 py-20 text-white">
       <div className="mx-auto max-w-7xl px-6">
         <div className="max-w-2xl">
           <h2 className="text-3xl font-semibold sm:text-4xl">Legacy discipline, new-age execution.</h2>
-          <p className="mt-3 text-white/70">
-            Our workflow brings consultancy-grade clarity with studio-level craft.
-          </p>
+          <p className="mt-3 text-white/70">Our workflow brings consultancy-grade clarity with studio-level craft.</p>
         </div>
 
         <ol className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, idx) => (
-            <li key={step.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+            <motion.li
+              key={step.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: idx * 0.05 }}
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur"
+            >
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/20">
                   <step.icon size={18} />
@@ -51,7 +57,7 @@ export default function Process() {
               </div>
               <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
               <p className="mt-2 text-sm text-white/80">{step.desc}</p>
-            </li>
+            </motion.li>
           ))}
         </ol>
 
